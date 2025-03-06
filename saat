@@ -1,0 +1,16 @@
+<?php
+
+$token = "7685064365:AAEb8kvLnR62A2_5A6dbZHhon91UVZxYsn0"; // Бот токені
+$chat_id = "TELEGRAM_USER_ID"; // Telegram ID-нізді қойыңыз
+
+while (true) {
+    $time = date("H:i"); // Қазіргі уақытты алу
+    $new_name = "Бердах 🕒 $time"; // Жаңартылған ат
+
+    // Telegram API арқылы атты өзгерту
+    file_get_contents("https://api.telegram.org/bot$token/setMyName?name=" . urlencode($new_name));
+
+    sleep(60); // 60 секунд (1 минут) күту
+}
+
+?>
